@@ -1,53 +1,72 @@
-# 超现实波普拼贴 · Surreal Pop Collage
+# Bizarre Photo Collage · 怪诞摄影拼贴
 
-一个给 AI 编程/agent 工具用的图像生成 skill：把任意照片变成**超现实波普拼贴画**——照片去色保留为"现实锚"，背景换成巨大平涂色形，全图只有一个"不可能的巨物"。
+Turn reference photos into richly layered, bizarre handmade collages while keeping their subjects recognizable. Combine displaced photographic slices, recursive details, impossible spaces, torn paper, print textures, and freely designed graffiti colors.
 
-> 黑白现实、平涂梦境、一物不对劲、元素源于图、色从图中来。
+This is a derivative of **Surreal Pop Collage**, not an entirely original skill. The original project's attribution and MIT license are preserved below.
 
-## 效果
+## Credits and origin
 
-（示例图见 `examples/`——风景、城市、人物三类示例。）
+- **Original skill:** [surreal-pop-collage](https://github.com/2998980-hue/surreal-pop-collage), published under the GitHub account **2998980-hue**.
+- **Original author recorded in the inherited Git history:** **chenzeqian123**, in commit `5bcf6f5` (`v1.0: surreal pop collage skill — B&W photo anchor, flat color shapes, one impossible element`). The repository owner and recorded commit author are credited separately rather than assumed to be the same person.
+- **This derivative:** [bizarre-photo-collage](https://github.com/dearkatrina1226/bizarre-photo-collage), maintained by **dearkatrina1226**.
 
-## 安装
+The original provides the foundation: recognizable photographic subjects, scene-derived surreal elements, color contrast, prompt construction, and visual quality checks. This adaptation builds on that work. It does not imply endorsement by the original author or repository owner.
 
-**Kimi Code / Claude Code / Codex 等 agent 工具**：把本仓库的 `SKILL.md` 与 `agents/` 复制到你的 skills 目录（如 `~/.kimi-code/skills/surreal-pop-collage/`），agent 会在你说"把这张照片做成超现实拼贴"时自动调用。
+## What changed
 
-**任何生图工具（ChatGPT / Midjourney / 即梦等）**：不用安装，直接按下面的配方手写 prompt。
+| Area | Original skill | This derivative |
+| --- | --- | --- |
+| Default direction | A black-and-white photographic anchor against large flat color shapes | Rich, bizarre handmade photographic collage |
+| Surreal elements | Exactly one impossible giant object | Multiple related anomalies with a clear visual hierarchy |
+| Spatial composition | Preserve the scene and add an oversized intervention | Displaced slices, recursive repetition, nested interiors, inside-out spaces, and impossible overlaps |
+| Materials | Strict flat-color treatment without dimensional shadows | Torn edges, scissor cuts, paper backs, selective halftone, print misregistration, and local layer shadows |
+| Color | Colors derived from the source or a contrasting strategy | Broader contrasting and fluorescent accents, selected for each image |
+| Graffiti | A few white hand-drawn strokes and a prescribed small-element arrangement | Optional marks with varied colors, shapes, weights, and arrangements |
+| Reuse | A constrained single-object recipe | Scene-specific motifs; avoid repeating the same eyes, stairs, rings, or checkerboards across unrelated photos |
+| Identity | `surreal-pop-collage` | `bizarre-photo-collage`, with updated display name and invocation prompt |
 
-## 用法（30 秒版）
+The subject should still be recognizable. Details should come from the reference scene, and dense areas should be balanced with quieter areas. “Bizarre” does not default to gore or horror. A simpler composition remains available when requested.
 
-1. 选一张照片，写下三行：主体是什么 / 主色是哪两个 / 它在哪
-2. 定平涂色形：从主色出发——提纯、互补、或情绪反转，三选一，2–3 个大色形替换背景
-3. 定巨物：**只能一个**，从场景里长出来——图里的小东西放大 / 语义最远的东西 / 尺度颠倒；文化地标就用它的典故
-4. 按四段式拼 prompt：
+## Installation
 
+Copy `SKILL.md` and the `agents/` directory into a skill folder named `bizarre-photo-collage` in your agent's configured skills directory. For a standard Codex installation, the resulting structure is:
+
+```text
+~/.codex/skills/bizarre-photo-collage/
+├── SKILL.md
+└── agents/
+    └── openai.yaml
 ```
-surreal pop collage, vertical 3:4,
-keep the [主体] clearly recognizable but desaturated to black and white,
-the background replaced by huge flat matte color shapes: [色形与颜色],
-one impossible giant element: [巨物],
-[小元素群] in graduated sizes following an arc,
-a few white hand-drawn graffiti strokes,
-flat matte colors, no gradients, no text, no watermark
+
+When redistributing the skill, also retain `LICENSE` and this attribution. This is an instruction-based skill, not a standalone image-generation application: the host needs an available image-generation capability. The skill instructions are written in Chinese; requests can be made in Chinese or English.
+
+## Usage
+
+Attach a reference photo and request:
+
+```text
+Use $bizarre-photo-collage to reinterpret this photo as a bizarre handmade collage.
+Keep the subject recognizable and freely design the graffiti colors.
 ```
 
-完整规则（决策优先级、色形推导、巨物选择、纠偏表、质量门）见 `SKILL.md`。
+```text
+用 $bizarre-photo-collage 把这张照片做成怪诞手工拼贴。
+保留主体辨识度，涂鸦颜色自由设计，不要重复之前的配色和元素。
+```
 
-## 核心规则速览
+For multiple photos, specify whether you want separate artworks or one combined composition. You can also specify aspect ratio, preferred colors, or details that must stay intact.
 
-- **一物不对劲**：巨物唯一。第二个不可能元素出现就删——超现实的力量全在"只有一处不对劲"
-- **元素源于图**：巨物和色形都必须能从原图指出出处；禁止默认的红日/蓝天/海豚/鲸鱼
-- **平涂无渐变**：色形不许有渐变和立体阴影，这是和照片真实感对撞的关键
-- **典故巨物**：文化地标照片，巨物从典故里选，但先翻译成可见的物件或动作（例：白居易开凿山塘河→灯笼升空成月）
-- **中文后期排**：生图模型写中文必乱码，prompt 里 `no text`，标题后期用代码排
+The complete creative workflow is in [SKILL.md](SKILL.md). The original guidance in [examples/README.md](examples/README.md) is retained as legacy material; it describes the earlier, simpler style. No sample image files are currently included in this repository.
 
-## 示例图
+## Repository contents
 
-见 `examples/`：
-
-- 城市街景：黄色天空来自出租车的黄，巨物是吊在楼谷间的红绿灯
-- 更多示例陆续补充（风景/人像/文化地标系列）
+- `SKILL.md` — creative instructions for the derivative skill.
+- `agents/openai.yaml` — display metadata and default invocation prompt.
+- `LICENSE` — original MIT license, preserved unchanged.
+- `examples/README.md` — inherited example guidance, preserved unchanged.
 
 ## License
 
-MIT
+This derivative is distributed under the [MIT License](LICENSE). The original license file, including its `Copyright (c) 2026` notice, is preserved verbatim. No named copyright holder has been invented or substituted for the original notice.
+
+The license applies to the repository's skill materials. It does not grant rights to third-party reference photos, brands, or other external content used with the skill.

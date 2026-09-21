@@ -1,4 +1,4 @@
 interface:
-  display_name: "超现实波普拼贴"
-  short_description: "黑白照片×平涂梦境：把照片变成只有一个不可能巨物的超现实拼贴海报"
-  default_prompt: "Use $surreal-pop-collage to transform this photo into a surreal pop collage: keep the subject in black and white, replace the background with huge flat color shapes, and add exactly one impossible giant element derived from the scene."
+  display_name: "怪诞摄影拼贴"
+  short_description: "把照片重构为怪诞手工拼贴：错位切片、荒诞空间、撕纸层次与高饱和撞色"
+  default_prompt: "Use $bizarre-photo-collage to reinterpret this photo as a bizarre, richly layered handmade photomontage, keeping the subject recognizable while transforming scene-derived fragments through displaced slices, repetition, impossible spaces, torn paper and bold color contrasts."
