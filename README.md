@@ -32,7 +32,7 @@ The subject should still be recognizable. Details should come from the reference
 Copy `SKILL.md` and the `agents/` directory into a skill folder named `bizarre-photo-collage` in your agent's configured skills directory. For a standard Codex installation, the resulting structure is:
 
 ```text
-~/.codex/skills/bizarre-photo-collage/
+~/.agents/skills/bizarre-photo-collage/
 ├── SKILL.md
 └── agents/
     └── openai.yaml
