@@ -70,3 +70,5 @@ The complete creative workflow is in [SKILL.md](SKILL.md). The original guidance
 This derivative is distributed under the [MIT License](LICENSE). The original license file, including its `Copyright (c) 2026` notice, is preserved verbatim. No named copyright holder has been invented or substituted for the original notice.
 
 The license applies to the repository's skill materials. It does not grant rights to third-party reference photos, brands, or other external content used with the skill.
+
+The derivative copyright notice created in this repository's initial GitHub commit is also retained in [LICENSE-DERIVATIVE](LICENSE-DERIVATIVE), under the same MIT terms.
