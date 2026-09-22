@@ -59,11 +59,11 @@ For multiple photos, specify whether you want separate artworks or one combined 
 The complete creative workflow is in [SKILL.md](SKILL.md). The original guidance in [examples/README.md](examples/README.md) is retained as legacy material; it describes the earlier, simpler style. No sample image files are currently included in this repository.
 ## Examples
 
-![Example 1](examples/example-01.jpg)
+![Example 1](examples/example-01.jpg.png)
 
-![Example 2](examples/example-02.jpg)
+![Example 2](examples/example-02.jpg.png)
 
-![Example 3](examples/example-03.jpg)
+![Example 3](examples/example-03.jpg.png)
 ## Repository contents
 
 - `SKILL.md` — creative instructions for the derivative skill.
